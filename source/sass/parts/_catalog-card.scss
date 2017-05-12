@@ -1,0 +1,64 @@
+.catalog-card {
+  @include padding-trailer(0.5);
+  position: relative;
+  //width: 176px; // dev
+
+  &__preview { }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+  }
+
+  &__title {
+    @include margin-leader(0.75);
+    text-align: center;
+  }
+
+  &__price {
+    text-align: center;
+    transition: 0.3s ease;
+  }
+
+  &__rating {
+    @include margin-leader(0.25);
+    transition: 0.3s ease;
+  }
+
+  &__overlay {
+    border: 2px solid $base-yellow-color;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  &__action-pane {
+    @include output-rhythm(bottom, rhythm(0.5));
+    text-align: center;
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+  &:hover { }
+  &:hover &__overlay { opacity: 1; }
+  &:hover &__price,
+  &:hover &__rating {
+    opacity: 0;
+  }
+}
+
+//=====================
+/* Устраняем моргание больших картинок */
+
+.slider {
+  .catalog-card { width: 176px; }
+  .slick-initialized .catalog-card { width: 100%; }
+}
+/* ^^^ */

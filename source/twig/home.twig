@@ -1,0 +1,118 @@
+{% extends "/source/twig/layouts/base.twig" %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block stylesheets %}{{ pixelGlass({'992px':'dev-tools/pixel/design.png'}) }}{% endblock %}
+
+{% block baseContent %}
+  <div class="container">
+    <div class="catalog">
+      <div class="catalog__aligner">
+        <div class="catalog__body">
+          <h1 class="catalog__heading">Каталог</h1>
+
+          <div class="catalog__slider catalog__panel panel">
+            <div class="slider">
+              <div class="slider__header">
+                <div class="slider__heading">Самые продаваемые товары</div>
+                <div class="slider__navs slider-navs">
+                  <div class="slider-navs__nav slider-navs__nav_prev" role="button" title="Previous">
+                    {{ svgIcon('left', 'slider-navs__icon') }}
+                  </div>
+                  <div class="slider-navs__nav slider-navs__nav_next" role="button" title="Next">
+                    {{ svgIcon('right', 'slider-navs__icon') }}
+                  </div>
+                </div>
+              </div><!-- // .slider__header -->
+              <div class="slider__container">
+                <div class="slider__items">
+                  {% for c in 1..2 %}
+                    {% for i in 1..4 %}
+                      <div class="slider__item">
+                        <div class="catalog-card">
+                          <div class="catalog-card__preview">
+                            <img class="catalog-card__image" src="/design/images/cat-0{{ i }}.jpg" alt="">
+                          </div>
+                          <div class="catalog-card__title">Lorem ipsum dolor</div>
+                          <div class="catalog-card__price prices">
+                            <span class="prices__old">$100.00</span>
+                            <span class="prices__actual">$90.00</span>
+                          </div><!-- // .prices -->
+                          <div class="catalog-card__rating rating">
+                            <div class="rating__items">
+                              {% for i in [0,1,1,1,1] %}
+                                <div class="rating__item {{ i ? 'rating__item_checked' : '' }}">
+                                  {{ svgIcon('star', 'rating__star') }}
+                                </div>
+                              {% endfor %}
+                            </div>
+                          </div><!-- // .rating -->
+                          <div class="catalog-card__overlay">
+                            <div class="catalog-card__action-pane">
+                              <a class="catalog-card__button button button_buy" href="#">Купить</a>
+                            </div>
+                          </div><!-- // .catalog-card__overlay -->
+                        </div><!-- // .catalog-card -->
+                      </div><!-- // .slider__item -->
+                    {% endfor %}
+                  {% endfor %}
+                </div><!-- // .slider__items -->
+              </div><!-- // .slider__container -->
+            </div><!-- // .slider -->
+          </div><!-- // .panel -->
+
+
+          <div class="catalog__panel catalog__panel_last panel">
+            <div class="catalog-grid">
+              {% for c in 1..3 %}
+                {% for i in 1..4 %}
+                  <div class="catalog-grid__item">
+                    <div class="catalog-card">
+                      <div class="catalog-card__preview">
+                        <img class="catalog-card__image" src="/design/images/cat-0{{ i }}.jpg" alt="">
+                      </div>
+                      <div class="catalog-card__title">Lorem ipsum dolor</div>
+                      <div class="catalog-card__price prices">
+                        <span class="prices__old">$100.00</span>
+                        <span class="prices__actual">$90.00</span>
+                      </div><!-- // .prices -->
+                      <div class="catalog-card__rating rating">
+                        <div class="rating__items">
+                          {% for i in [0,1,1,1,1] %}
+                            <div class="rating__item {{ i ? 'rating__item_checked' : '' }}">
+                              {{ svgIcon('star', 'rating__star') }}
+                            </div>
+                          {% endfor %}
+                        </div>
+                      </div><!-- // .rating -->
+                      <div class="catalog-card__overlay">
+                        <div class="catalog-card__action-pane">
+                          <a class="catalog-card__button button button_buy" href="#">Купить</a>
+                        </div>
+                      </div><!-- // .catalog-card__overlay -->
+                    </div><!-- // .catalog-card -->
+                  </div>
+                {% endfor %}
+              {% endfor %}
+            </div>
+          </div><!-- // .panel -->
+
+          <div class="catalog__description catalog__description_after">
+            <p>Выставочный стенд отталкивает конвергентный имидж, повышая конкуренцию. Спонсорство синхронизирует
+              поведенческий таргетинг. Тем не менее, корпоративная культура тормозит имидж. Нестандартный подход
+              осмысленно консолидирует медиавес, отвоевывая рыночный сегмент. Целевая аудитория, суммируя приведенные
+              примеры, концентрирует медиавес. Конкурент программирует социометрический SWOT-анализ.</p>
+
+            <p>Выставочный стенд отталкивает конвергентный имидж, повышая конкуренцию. Спонсорство синхронизирует
+              поведенческий таргетинг. Тем не менее, корпоративная культура тормозит имидж. Нестандартный подход
+              осмысленно консолидирует медиавес, отвоевывая рыночный сегмент. Целевая аудитория, суммируя приведенные
+              примеры, концентрирует медиавес. Конкурент программирует социометрический SWOT-анализ.</p>
+          </div>
+
+        </div><!-- // .catalog__body -->
+      </div><!-- // .catalog__aligner -->
+    </div><!-- // .catalog -->
+  </div><!-- // .container -->
+
+  <div class="footer"></div>
+{% endblock %}

@@ -1,0 +1,43 @@
+.slider {
+  &__header {
+    @include apply-side-rhythm-border(bottom, 1px, 1);
+    @include margin-trailer(1);
+    border-bottom-color: $hr-border;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__heading {
+    @include outline();
+    @include adjust-font-size-to(23px);
+    text-transform: uppercase;
+  }
+  &__nav { }
+
+  &__container { @include make-margins(); }
+  &__items { }
+  &__item {
+    @include make-gutters();
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    &__header { align-items: flex-end; }
+  }
+
+  // На случай выключенного js
+  &__items {
+    @include output-rhythm(height, rhythm(12.5));
+    display: flex;
+    overflow: hidden;
+
+    &.slick-initialized {
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+  }
+}

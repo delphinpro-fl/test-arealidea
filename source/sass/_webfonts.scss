@@ -1,0 +1,19 @@
+@mixin add-webfont($name, $path, $weight, $style, $filename) {
+  @font-face {
+    font-family: $name;
+    src: url('#{$path}/#{$filename}.eot');
+    src: url('#{$path}/#{$filename}.eot?#iefix') format('embedded-opentype'),
+    url('#{$path}/#{$filename}.woff2') format('woff2'),
+    url('#{$path}/#{$filename}.woff') format('woff'),
+    url('#{$path}/#{$filename}.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+$path: '/design/fonts/PTSans';
+
+@include add-webfont('PS Sans', $path, normal, normal, 'ptsans_400-regular')
+@include add-webfont('PS Sans', $path, normal, italic, 'ptsans_400-regular-italic')
+@include add-webfont('PS Sans', $path, bold, normal, 'ptsans_700-bold')
+@include add-webfont('PS Sans', $path, bold, italic, 'ptsans_700-bold-italic')

@@ -1,0 +1,38 @@
+.catalog {
+  @include padding-leader(2.5);
+
+  &__aligner {
+    @include outline();
+    @include make-col(10);
+    @include make-col-offset(1);
+  }
+
+  &__body {
+    @include outline(green);
+    @include make-margins($half: false);
+  }
+
+  &__heading {
+    @include make-gutters($half: false);
+    @include margin-trailer(0.75);
+  }
+
+  &__panel {
+    @include padding-leader(1.25);
+    @include make-gutters($half: false);
+    @include margin-trailer(1.75);
+
+    &_last { margin-bottom: 0; }
+  }
+
+  &__slider {
+    @include padding-leader(0.75);
+  }
+
+  &__description {
+    @include adjust-font-size-to(14px, 17px / $base-line-height);
+
+    &_after { @include margin-leader(1.25); }
+    &_before { @include margin-trailer(1.25); }
+  }
+}

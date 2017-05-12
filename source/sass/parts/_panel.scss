@@ -1,0 +1,6 @@
+
+.panel {
+  @include z-depth(1);
+  @include output-rhythm(padding, rhythm(1));
+  background: #ffffff;
+}

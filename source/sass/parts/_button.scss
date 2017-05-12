@@ -1,0 +1,20 @@
+.button {
+  @include adjust-font-size-to(18px);
+  @include output-rhythm(padding-left, rhythm(1));
+  @include output-rhythm(padding-right, rhythm(1));
+  @include rhythm-padding(0.1);
+  align-items: center;
+  background: linear-gradient(to top, #fec706, #ffd85d);
+  box-shadow: 0 1px 1px rgba(#000, 0.2);
+  color: $text-color;
+  cursor: pointer;
+  display: inline-block; display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+
+  &:hover {
+    background: linear-gradient(to top, lighten(#fec706, 3%), lighten(#ffd85d, 3%));
+  }
+}

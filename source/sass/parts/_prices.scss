@@ -1,0 +1,16 @@
+.prices {
+  &__old {
+    color: $muted-lighten;
+    display: inline;
+    text-decoration: line-through;
+  }
+
+  &__actual {
+    color: $text-color;
+    display: inline;
+    font-weight: bold;
+  }
+
+  &__old + &__actual { margin-left: rem(15px); }
+  &__actual + &__old { margin-left: rem(15px); }
+}
