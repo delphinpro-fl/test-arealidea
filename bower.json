@@ -1,0 +1,30 @@
+{
+  "name": "gulp-starter",
+  "description": "Configuration template",
+  "authors": [
+    "delphinpro <delphinpro@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public_html/design/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "slick-carousel": "^1.6.0",
+    "svg4everybody": "^2.1.8"
+  },
+  "overrides": {
+    "slick-carousel": {
+      "main": [
+        "slick/slick.js",
+        "slick/slick.css"
+      ]
+    }
+  }
+}

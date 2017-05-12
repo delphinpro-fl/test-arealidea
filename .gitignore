@@ -1,0 +1,6 @@
+.idea/
+node_modules/
+public_html/
+bower_components/
+.ftppass
+.works/
